@@ -1,4 +1,4 @@
-# Yasir Azam | Cinematic Scrollytelling Portfolio
+# Yasir Azam | Portfolio
 
 A high-end, immersive personal portfolio built with **Next.js 14**, **TypeScript**, **Framer Motion**, and **Tailwind CSS**. This project features a custom frame-synced scrollytelling engine, cinematic UI effects, and a live production-grade contact backend.
 
