@@ -6,7 +6,7 @@ import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
-    <main className="bg-[#0a0a0a] min-h-screen">
+    <main className="relative bg-[#0a0a0a] min-h-screen">
       <div id="home" className="relative">
          <ScrollyCanvas />
       </div>

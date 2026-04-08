@@ -94,18 +94,18 @@ export default function Contact() {
                     className="w-full flex flex-col gap-6 p-8 md:p-12 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md shadow-[0_0_100px_rgba(255,255,255,0.02)]"
                 >
                     <div className="flex flex-col gap-3">
-                        <label className="text-xs uppercase tracking-[0.2em] text-fuchsia-400/80 font-bold px-2">Name</label>
-                        <input required type="text" name="name" placeholder="John Doe" className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-fuchsia-500/50 focus:bg-white/10 transition-all font-light" />
+                        <label htmlFor="name" className="text-xs uppercase tracking-[0.2em] text-fuchsia-400/80 font-bold px-2">Name</label>
+                        <input id="name" required type="text" name="name" autoComplete="name" placeholder="John Doe" className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-fuchsia-500/50 focus:bg-white/10 transition-all font-light" />
                     </div>
                     
                     <div className="flex flex-col gap-3">
-                        <label className="text-xs uppercase tracking-[0.2em] text-fuchsia-400/80 font-bold px-2">Email</label>
-                        <input required type="email" name="email" placeholder="john@example.com" className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-fuchsia-500/50 focus:bg-white/10 transition-all font-light" />
+                        <label htmlFor="email" className="text-xs uppercase tracking-[0.2em] text-fuchsia-400/80 font-bold px-2">Email</label>
+                        <input id="email" required type="email" name="email" autoComplete="email" placeholder="john@example.com" className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-fuchsia-500/50 focus:bg-white/10 transition-all font-light" />
                     </div>
 
                     <div className="flex flex-col gap-3">
-                        <label className="text-xs uppercase tracking-[0.2em] text-fuchsia-400/80 font-bold px-2">Message</label>
-                        <textarea required name="message" rows={4} placeholder="Tell me about your project..." className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-fuchsia-500/50 focus:bg-white/10 transition-all resize-none font-light"></textarea>
+                        <label htmlFor="message" className="text-xs uppercase tracking-[0.2em] text-fuchsia-400/80 font-bold px-2">Message</label>
+                        <textarea id="message" required name="message" rows={4} placeholder="Tell me about your project..." className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-fuchsia-500/50 focus:bg-white/10 transition-all resize-none font-light"></textarea>
                     </div>
 
                     <button 

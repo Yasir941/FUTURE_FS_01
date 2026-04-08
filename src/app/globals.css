@@ -7,9 +7,10 @@
   --background-rgb: 10, 10, 10;
 }
 
-body {
+html, body {
   color: rgb(var(--foreground-rgb));
   background: #0a0a0a;
+  position: relative;
 }
 
 @keyframes noise {
@@ -29,7 +30,7 @@ body {
     position: fixed;
     inset: -200%;
     z-index: 9999;
-    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+    background-image: url("/noise.svg");
     opacity: 0.12;
     pointer-events: none;
     animation: noise 2s steps(4) infinite;
@@ -51,4 +52,17 @@ body {
 
 .animate-marquee-reverse {
   animation: marquee-reverse 35s linear infinite;
+}
+
+/* Fix for hydration mismatch in text strokes */
+.text-outline {
+  -webkit-text-stroke: 1.2px rgba(255, 255, 255, 0.8);
+  -webkit-text-fill-color: rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 768px) {
+  .text-outline {
+    -webkit-text-stroke: 2.5px rgba(255, 255, 255, 1);
+    -webkit-text-fill-color: rgba(0, 0, 0, 0.1);
+  }
 }
