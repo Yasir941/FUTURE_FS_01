@@ -3,6 +3,9 @@ import Projects from "@/components/Projects";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
+import PageLoader from "@/components/PageLoader";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const SectionDivider = () => (
   <div className="relative w-full h-px overflow-visible flex items-center justify-center" aria-hidden="true">
@@ -15,6 +18,8 @@ const SectionDivider = () => (
 export default function Home() {
   return (
     <main className="relative bg-[#0a0a0a] min-h-screen">
+      <PageLoader />
+      <ScrollToTop />
       <div id="home" className="relative">
          <ScrollyCanvas />
       </div>
@@ -26,6 +31,7 @@ export default function Home() {
       <Skills />
       <SectionDivider />
       <Contact />
+      <Footer />
     </main>
   );
 }

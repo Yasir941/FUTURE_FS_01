@@ -121,16 +121,6 @@ export default function Contact() {
                 </motion.form>
 
             </div>
-            
-            <motion.div 
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.5 }}
-                className="text-center mt-32 text-white/30 text-xs tracking-widest uppercase w-full"
-            >
-                <p>© 2026 Yasir Azam. All rights reserved.</p>
-            </motion.div>
         </section>
     );
 }
