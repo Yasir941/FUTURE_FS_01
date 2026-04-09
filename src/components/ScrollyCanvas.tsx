@@ -16,7 +16,6 @@ export default function ScrollyCanvas() {
   const [isReady, setIsReady] = useState(false);
   
   // THE NATIVE REACT MASTER CLOCK
-  const [currentFrame, setCurrentFrame] = useState(0);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -25,8 +24,6 @@ export default function ScrollyCanvas() {
 
   const frameIndex = useTransform(scrollYProgress, [0, 1], [0, FRAME_COUNT - 1]);
 
-  const outlineClass = "text-outline";
-  const rainbowClass = "text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 drop-shadow-[0_0_20px_rgba(217,70,239,0.3)]";
 
   // Canvas context and size management
   useEffect(() => {
@@ -95,7 +92,6 @@ export default function ScrollyCanvas() {
   }, []);
 
   const drawFrame = useRef((index: number, imgList: (HTMLImageElement | undefined)[]) => {
-      setCurrentFrame(index);
       if (!canvasRef.current) return;
       
       const canvas = canvasRef.current;
@@ -147,62 +143,12 @@ export default function ScrollyCanvas() {
     return () => unsubscribe();
   }, [frameIndex, images, isReady]);
 
-  // Safe manual boolean check against exact hardware frame index!
-  const isActive = (start: number, end: number) => currentFrame >= start && currentFrame < end;
 
   return (
     <div ref={containerRef} className="relative h-[500vh] w-full bg-[#0a0a0a]">
       <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
         <canvas ref={canvasRef} className="absolute inset-0 h-full w-full object-cover z-0" />
         
-        <div className="absolute inset-0 w-full h-full pointer-events-none z-10 flex flex-col justify-center px-6 md:px-24 overflow-hidden drop-shadow-[0_0_30px_rgba(0,0,0,1)]">
-            
-            {/* Section 1: Hi (Left) */}
-            <div 
-                className={`absolute left-6 md:left-24 top-1/2 -translate-y-1/2 transition-opacity duration-700 ease-in-out ${isActive(0, 18) ? 'opacity-100' : 'opacity-0'}`}
-            >
-                <h1 className={`text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter ${outlineClass}`}>
-                    Hi.
-                </h1>
-            </div>
-
-            {/* Section 2: I am Yasir Azam (Right) */}
-            <div 
-                className={`absolute right-6 md:right-24 top-1/2 -translate-y-1/2 text-right w-full max-w-[90vw] md:max-w-2xl transition-opacity duration-700 ease-in-out ${isActive(18, 36) ? 'opacity-100' : 'opacity-0'}`}
-            >
-                <h2 className={`text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-none ${outlineClass}`}>
-                    I am <br />
-                    <span className={rainbowClass} style={{ WebkitTextStroke: '0px', WebkitTextFillColor: 'transparent' }}>
-                        Yasir Azam.
-                    </span>
-                </h2>
-            </div>
-
-            {/* Section 3: Innovating the Frontier (Left) */}
-            <div 
-                className={`absolute left-6 md:left-24 top-1/2 -translate-y-1/2 w-full max-w-[95vw] md:max-w-4xl transition-opacity duration-700 ease-in-out ${isActive(36, 54) ? 'opacity-100' : 'opacity-0'}`}
-            >
-                <h2 className={`text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-black tracking-tighter leading-none ${outlineClass}`}>
-                    Innovating the <br/>
-                    <span className={rainbowClass} style={{ WebkitTextStroke: '0px', WebkitTextFillColor: 'transparent' }}>
-                        Digital Frontier.
-                    </span>
-                </h2>
-            </div>
-
-            {/* Section 4: Let's Collaborate (Right) */}
-            <div 
-                className={`absolute right-6 md:right-24 top-1/2 -translate-y-1/2 text-right w-full max-w-[90vw] md:max-w-xl transition-opacity duration-700 ease-in-out ${isActive(54, 75) ? 'opacity-100' : 'opacity-0'}`}
-            >
-                <h1 className={`text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-none ${outlineClass}`}>
-                    Let&apos;s <br/>
-                    <span className={`border-b-4 md:border-b-8 border-fuchsia-500 pb-2 ${rainbowClass}`} style={{ WebkitTextStroke: '0px', WebkitTextFillColor: 'transparent' }}>
-                        Collaborate.
-                    </span>
-                </h1>
-            </div>
-
-        </div>
 
       </div>
     </div>
