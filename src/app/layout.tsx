@@ -17,6 +17,9 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <link rel="preload" href="/sequence/frame_00_delay-0.066s.png" as="image" />
+      </head>
       <body className={`${outfit.className} bg-[#0a0a0a] text-white antialiased`}>
         <div className="noise-overlay" />
         <SmoothScroll>

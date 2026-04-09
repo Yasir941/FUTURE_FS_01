@@ -9,8 +9,9 @@ export default function Home() {
   return (
     <main className="relative bg-[#0a0a0a] min-h-screen">
       <div id="home" className="relative">
-         <ScrollyCanvas />
-         <Overlay />
+         <ScrollyCanvas>
+            <Overlay />
+         </ScrollyCanvas>
       </div>
       <About />
       <Projects />

@@ -9,7 +9,7 @@ const getFramePath = (index: number) => {
   return `/sequence/frame_${paddedIndex}_delay-0.066s.png`;
 };
 
-export default function ScrollyCanvas() {
+export default function ScrollyCanvas({ children }: { children?: React.ReactNode }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [images, setImages] = useState<(HTMLImageElement | undefined)[]>(new Array(FRAME_COUNT).fill(undefined));
@@ -148,6 +148,7 @@ export default function ScrollyCanvas() {
     <div ref={containerRef} className="relative h-[500vh] w-full bg-[#0a0a0a]">
       <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
         <canvas ref={canvasRef} className="absolute inset-0 h-full w-full object-cover z-0" />
+        {children}
         
 
       </div>
