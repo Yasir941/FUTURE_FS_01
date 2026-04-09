@@ -46,7 +46,7 @@ export default function ScrollyCanvas() {
     handleResize(); // Initial size
 
     return () => window.removeEventListener("resize", handleResize);
-  }, [images]);
+  }, [images, frameIndex]);
 
   useEffect(() => {
     const loadedImages = [...images];
@@ -62,8 +62,11 @@ export default function ScrollyCanvas() {
             const img = new Image();
             img.src = getFramePath(index);
             img.onload = () => {
-                loadedImages[index] = img;
-                setImages([...loadedImages]);
+                setImages(prev => {
+                    const newImages = [...prev];
+                    newImages[index] = img;
+                    return newImages;
+                });
                 if (index === 0) setIsReady(true);
                 resolve();
             };
@@ -88,9 +91,10 @@ export default function ScrollyCanvas() {
     };
 
     loadAll();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const drawFrame = (index: number, imgList: (HTMLImageElement | undefined)[]) => {
+  const drawFrame = useRef((index: number, imgList: (HTMLImageElement | undefined)[]) => {
       setCurrentFrame(index);
       if (!canvasRef.current) return;
       
@@ -127,7 +131,7 @@ export default function ScrollyCanvas() {
         img.width * ratio,
         img.height * ratio
       );
-  };
+  }).current;
 
   useEffect(() => {
     if (!isReady || !canvasRef.current) return;

@@ -37,7 +37,7 @@ export default function Navbar() {
     });
 
     return () => observer.disconnect();
-  }, [links]);
+  }, []);
 
   return (
     <nav className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 w-[92vw] sm:w-[90vw] md:w-auto max-w-2xl">
