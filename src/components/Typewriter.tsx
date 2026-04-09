@@ -11,14 +11,12 @@ export default function Typewriter({
     className?: string;
     delay?: number;
 }) {
-  const characters = Array.from(text);
-
   const container: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.05,
+        staggerChildren: 0.03,
         delayChildren: delay,
       },
     },
@@ -28,9 +26,13 @@ export default function Typewriter({
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { duration: 0.1 }
+      transition: { duration: 0.05 }
     },
   };
+
+  // Splitting by words to prevent character-level wrapping
+  // We keep the spaces and newlines as separate units
+  const words = text.split(/(\s+)/);
 
   return (
     <motion.div
@@ -42,17 +44,35 @@ export default function Typewriter({
       viewport={{ once: true, margin: "0px" }}
       className={className}
     >
-      {characters.map((char, i) => {
-        if (char === "\n") return <br key={i} />;
+      {words.map((word, wordIndex) => {
+        // Handle newlines
+        if (word.includes("\n")) {
+            return <br key={`br-${wordIndex}`} />;
+        }
+        
+        // Handle spaces
+        if (word.trim() === "") {
+            return (
+                <span key={`space-${wordIndex}`} className="inline-block whitespace-pre">
+                    {" "}
+                </span>
+            );
+        }
+
+        // Handle regular words - WRAP IN A NON-BREAKING ATOMIC FLEX CONTAINER
         return (
-          <motion.span
-            aria-hidden="true"
-            key={i}
-            variants={charVariant}
-            className="inline-block"
-          >
-            {char === " " ? "\u00A0" : char}
-          </motion.span>
+            <span key={`word-${wordIndex}`} className="inline-flex flex-nowrap whitespace-nowrap">
+                {Array.from(word).map((char, charIndex) => (
+                    <motion.span
+                        aria-hidden="true"
+                        key={`${wordIndex}-${charIndex}`}
+                        variants={charVariant}
+                        className="inline-block"
+                    >
+                        {char}
+                    </motion.span>
+                ))}
+            </span>
         );
       })}
     </motion.div>

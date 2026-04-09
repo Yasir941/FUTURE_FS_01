@@ -21,10 +21,10 @@ export default function Skills() {
 
     return (
         <section id="skills" className="py-24 bg-[#0a0a0a] section-optimize">
-            <div className="max-w-7xl mx-auto px-8 mb-20 text-center md:text-left">
-                <Typewriter text="Core Competencies" delay={0.1} className="text-sm text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 uppercase tracking-[0.4em] font-bold mb-4 inline-block" />
+            <div className="max-w-6xl mx-auto px-6 md:px-24 mb-20 text-center md:text-left">
+                <Typewriter text="Core Competencies" delay={0.1} className="text-sm text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 uppercase tracking-[0.4em] font-bold mb-6 inline-block" />
                 <br />
-                <Typewriter text="Technical & Soft Skills" delay={0.3} className="text-5xl md:text-6xl font-extrabold text-white tracking-tight" />
+                <Typewriter text="Technical & Soft Skills." delay={0.3} className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-none tracking-tighter text-balance" />
             </div>
 
             <MarqueeRow items={row1} />

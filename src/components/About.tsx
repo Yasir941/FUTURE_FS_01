@@ -5,7 +5,7 @@ import Typewriter from "@/components/Typewriter";
 export default function About() {
   return (
     <section id="about" className="relative z-20 w-full bg-[#0a0a0a] py-24 md:py-40 px-6 md:px-24 overflow-hidden section-optimize">
-      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-20 items-center text-center lg:text-left">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 lg:gap-20 items-center text-center md:text-left">
         
         <motion.div 
             initial={{ opacity: 0, y: 40 }}
@@ -15,11 +15,11 @@ export default function About() {
             className="flex-1"
         >
           <Typewriter text="About Me" delay={0.1} className="text-sm text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 uppercase tracking-[0.4em] font-bold mb-6 inline-block" />
-          <Typewriter text={"Engineering Digital\nExcellence."} delay={0.3} className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60 leading-tight mb-8 text-balance" />
-          <p className="text-lg md:text-xl text-white/70 leading-relaxed font-light mb-8 mt-4 text-left lg:text-justify text-balance">
+          <Typewriter text="Engineering Digital Excellence." delay={0.3} className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-white/40 leading-tight mb-8 tracking-tighter" />
+          <p className="text-lg md:text-xl text-white/70 leading-relaxed font-light mb-8 mt-4 text-left md:text-justify text-balance">
             As a driven 1st Year Computer Science undergraduate, I am focused on building high-performance, intelligent digital systems. My technical journey sits at the intersection of complex problem-solving and sleek, modern design architectures—bridging the gap between robust software engineering and an intuitive user experience.
           </p>
-          <p className="text-lg md:text-xl text-white/70 leading-relaxed font-light mb-12 text-left lg:text-justify text-balance">
+          <p className="text-lg md:text-xl text-white/70 leading-relaxed font-light mb-12 text-left md:text-justify text-balance">
              Beyond the screen, I am deeply committed to real-world impact. Serving as the Joint Secretary for the Westford Student Council (2024–2025), I orchestrate large-scale events and student wellness initiatives. This unique blend of technical execution and active leadership allows me to drive results effectively in agile, collaborative team environments.
           </p>
 

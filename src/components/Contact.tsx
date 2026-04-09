@@ -39,8 +39,8 @@ export default function Contact() {
     };
 
     return (
-    <section id="contact" className="relative z-20 w-full bg-black py-24 md:py-40 px-6 md:px-16 flex flex-col justify-center min-h-screen overflow-hidden section-optimize">
-      <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center text-center lg:text-left">
+    <section id="contact" className="relative z-20 w-full bg-black py-24 md:py-40 px-6 md:px-24 flex flex-col justify-center min-h-screen overflow-hidden section-optimize">
+      <div className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center text-center md:text-left">
                 
                 {/* Left Side: Header & Info */}
                 <motion.div 
@@ -51,7 +51,7 @@ export default function Contact() {
                 >
                     <Typewriter text="Get In Touch" delay={0.1} className="text-sm text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 uppercase tracking-[0.4em] font-bold mb-6 inline-block" />
                     <Typewriter text={"Let's Build\nSomething."} delay={0.3} className="text-4xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white to-white/40 mb-8 tracking-tighter leading-none pr-8" />
-                    <p className="text-white/60 text-lg font-light max-w-md mb-16 mt-4">
+                    <p className="text-white/60 text-lg md:text-xl font-light max-w-md mb-16 mt-4 text-balance">
                         Have a project in mind or want to collaborate? Drop me a message below or reach out directly—let&apos;s make it happen.
                     </p>
                     <div className="flex flex-col gap-6 font-medium text-white/80">
@@ -95,17 +95,17 @@ export default function Contact() {
                 >
                     <div className="flex flex-col gap-3">
                         <label htmlFor="name" className="text-xs uppercase tracking-[0.2em] text-fuchsia-400/80 font-bold px-2">Name</label>
-                        <input id="name" required type="text" name="name" autoComplete="name" placeholder="John Doe" className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-fuchsia-500/50 focus:bg-white/10 transition-all font-light" />
+                        <input id="name" required type="text" name="name" autoComplete="name" placeholder="John Doe" className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-fuchsia-500/50 focus:bg-white/10 focus:shadow-[0_0_20px_rgba(217,70,239,0.1)] transition-all font-light" />
                     </div>
                     
                     <div className="flex flex-col gap-3">
                         <label htmlFor="email" className="text-xs uppercase tracking-[0.2em] text-fuchsia-400/80 font-bold px-2">Email</label>
-                        <input id="email" required type="email" name="email" autoComplete="email" placeholder="john@example.com" className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-fuchsia-500/50 focus:bg-white/10 transition-all font-light" />
+                        <input id="email" required type="email" name="email" autoComplete="email" placeholder="john@example.com" className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-fuchsia-500/50 focus:bg-white/10 focus:shadow-[0_0_20px_rgba(217,70,239,0.1)] transition-all font-light" />
                     </div>
 
                     <div className="flex flex-col gap-3">
                         <label htmlFor="message" className="text-xs uppercase tracking-[0.2em] text-fuchsia-400/80 font-bold px-2">Message</label>
-                        <textarea id="message" required name="message" rows={4} placeholder="Tell me about your project..." className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-fuchsia-500/50 focus:bg-white/10 transition-all resize-none font-light"></textarea>
+                        <textarea id="message" required name="message" rows={4} placeholder="Tell me about your project..." className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-fuchsia-500/50 focus:bg-white/10 focus:shadow-[0_0_20px_rgba(217,70,239,0.1)] transition-all resize-none font-light"></textarea>
                     </div>
 
                     <button 

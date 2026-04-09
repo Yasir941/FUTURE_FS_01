@@ -48,7 +48,7 @@ export default function Navbar() {
             href={link.href}
             onClick={() => setActive(link.name.toLowerCase())}
             className={`relative text-[10px] sm:text-xs font-bold uppercase tracking-widest md:tracking-[0.2em] transition-colors duration-300 px-1 md:px-0 ${
-              active === link.name.toLowerCase() ? "text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-indigo-400" : "text-white/60 hover:text-white"
+              active === link.name.toLowerCase() ? "text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500" : "text-white/60 hover:text-white"
             }`}
           >
             {link.name}
