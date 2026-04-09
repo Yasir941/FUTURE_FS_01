@@ -16,8 +16,8 @@ const MarqueeRow = ({ items, reverse = false }: { items: string[], reverse?: boo
 }
 
 export default function Skills() {
-    const row1 = ["Next.js", "React", "TypeScript", "Tailwind CSS", "Convex", "Backend DB"];
-    const row2 = ["Leadership", "Coordination", "Communication", "GenAI & RAG", "Vercel", "Problem Solving"];
+    const row1 = ["Next.js", "React", "TypeScript", "Tailwind CSS", "Convex", "PostgreSQL"];
+    const row2 = ["Leadership", "Event Planning", "Communication", "GenAI & RAG", "Vercel", "Problem Solving"];
 
     return (
         <section id="skills" className="py-24 bg-[#0a0a0a] section-optimize">

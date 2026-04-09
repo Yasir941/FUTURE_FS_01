@@ -2,10 +2,16 @@
 import { motion } from "framer-motion";
 import Typewriter from "@/components/Typewriter";
 
+const stats = [
+  { value: "5+", label: "Projects Built", sub: "Full-Stack & AI" },
+  { value: "100%", label: "Attendance", sub: "Record & Dedication" },
+  { value: "2×", label: "Award Winner", sub: "Hackathon & Edu Café" },
+];
+
 export default function About() {
   return (
     <section id="about" className="relative z-20 w-full bg-[#0a0a0a] py-24 md:py-40 px-6 md:px-24 overflow-hidden section-optimize">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 lg:gap-20 items-center text-center md:text-left">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 lg:gap-20 items-start text-center md:text-left">
         
         <motion.div 
             initial={{ opacity: 0, y: 40 }}
@@ -36,21 +42,33 @@ export default function About() {
           </a>
         </motion.div>
 
+        {/* Right: Stats Grid */}
         <motion.div 
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-            className="flex-1 flex justify-center w-full"
+            className="flex-1 flex flex-col gap-5 w-full"
         >
-             <div className="w-full max-w-md aspect-square rounded-full backdrop-blur-2xl bg-gradient-to-br from-fuchsia-500/10 to-indigo-500/5 border border-fuchsia-500/20 flex flex-col items-center justify-center p-12 relative overflow-hidden group shadow-[0_0_100px_rgba(217,70,239,0.1)]">
-                 <div className="absolute inset-0 bg-gradient-to-tr from-rose-500/20 via-fuchsia-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                 <div className="text-center z-10 transition-transform duration-500 group-hover:scale-110">
-                     <p className="text-8xl font-black text-transparent bg-clip-text bg-gradient-to-b from-rose-400 via-fuchsia-500 to-indigo-600 mb-4 drop-shadow-2xl">100%</p>
-                     <p className="text-sm font-bold uppercase tracking-[0.3em] text-white/80">Attendance</p>
-                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-fuchsia-400/80 mt-2">Record & Dedication</p>
-                 </div>
-             </div>
+          {stats.map((stat, i) => (
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 + i * 0.15 }}
+              className="group relative rounded-3xl border border-white/5 bg-white/[0.02] backdrop-blur-sm p-8 flex items-center gap-6 overflow-hidden transition-all duration-500 hover:border-fuchsia-500/30 hover:bg-gradient-to-br hover:from-fuchsia-900/20 hover:to-indigo-900/10 hover:shadow-[0_0_60px_rgba(217,70,239,0.08)]"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-rose-500/5 via-fuchsia-500/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <p className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-b from-rose-400 via-fuchsia-500 to-indigo-500 tracking-tighter shrink-0 transition-transform duration-500 group-hover:scale-110">
+                {stat.value}
+              </p>
+              <div className="text-left">
+                <p className="text-white font-extrabold text-lg md:text-xl tracking-tight">{stat.label}</p>
+                <p className="text-fuchsia-400/80 text-xs uppercase tracking-[0.2em] font-bold mt-1">{stat.sub}</p>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
         
       </div>
