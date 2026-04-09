@@ -6,7 +6,7 @@ const MarqueeRow = ({ items, reverse = false }: { items: string[], reverse?: boo
       <div className="relative flex overflow-hidden group w-full mb-12 select-none">
           <div className={`${reverse ? 'animate-marquee-reverse' : 'animate-marquee'} flex whitespace-nowrap w-max group-hover:[animation-play-state:paused]`}>
               {list.map((item, i) => (
-                  <span key={i} className="mx-10 text-6xl md:text-8xl font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white/20 to-white/5 hover:from-rose-400 hover:via-fuchsia-500 hover:to-indigo-500 transition-all duration-500">
+                  <span key={i} className="mx-6 md:mx-10 text-5xl md:text-8xl font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white/20 to-white/5 hover:from-rose-400 hover:via-fuchsia-500 hover:to-indigo-500 transition-all duration-500">
                       {item}
                   </span>
               ))}

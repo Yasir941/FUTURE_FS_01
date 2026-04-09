@@ -39,8 +39,8 @@ export default function Contact() {
     };
 
     return (
-        <section id="contact" className="relative z-20 w-full bg-black py-40 px-8 md:px-16 flex flex-col justify-center min-h-screen overflow-hidden section-optimize">
-            <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-center">
+    <section id="contact" className="relative z-20 w-full bg-black py-24 md:py-40 px-6 md:px-16 flex flex-col justify-center min-h-screen overflow-hidden section-optimize">
+      <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center text-center lg:text-left">
                 
                 {/* Left Side: Header & Info */}
                 <motion.div 
@@ -91,7 +91,7 @@ export default function Contact() {
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                     onSubmit={handleSubmit} 
-                    className="w-full flex flex-col gap-6 p-8 md:p-12 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md shadow-[0_0_100px_rgba(255,255,255,0.02)]"
+                    className="w-full flex flex-col gap-6 p-6 md:p-12 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md shadow-[0_0_100px_rgba(255,255,255,0.02)]"
                 >
                     <div className="flex flex-col gap-3">
                         <label htmlFor="name" className="text-xs uppercase tracking-[0.2em] text-fuchsia-400/80 font-bold px-2">Name</label>

@@ -70,3 +70,8 @@ html, body {
   content-visibility: auto;
   contain-intrinsic-size: 0 1000px;
 }
+
+.text-balance {
+  text-wrap: balance;
+}
+

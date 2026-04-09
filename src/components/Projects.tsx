@@ -40,7 +40,7 @@ export default function Projects() {
             className="text-sm text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 uppercase tracking-[0.4em] font-bold mb-12 text-center md:text-left inline-block"
         />
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-6 md:px-0">
           {experiences.map((exp, index) => (
             <motion.div 
                 key={exp.number}
@@ -51,17 +51,17 @@ export default function Projects() {
                 className="group relative cursor-pointer"
             >
               <TiltCard>
-                <div className="relative h-96 w-full rounded-3xl overflow-hidden bg-white/[0.02] border border-white/5 backdrop-blur-sm transition-all duration-700 hover:bg-gradient-to-br hover:from-fuchsia-900/40 hover:to-indigo-900/20 hover:border-fuchsia-500/30 hover:shadow-[0_0_50px_rgba(217,70,239,0.15)] flex">
+                <div className="relative min-h-[28rem] h-auto w-full rounded-3xl overflow-hidden bg-white/[0.02] border border-white/5 backdrop-blur-sm transition-all duration-700 hover:bg-gradient-to-br hover:from-fuchsia-900/40 hover:to-indigo-900/20 hover:border-fuchsia-500/30 hover:shadow-[0_0_50px_rgba(217,70,239,0.15)] flex">
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-80 z-0"></div>
                   
-                  <div className="absolute inset-0 flex flex-col justify-between p-10 z-10">
-                    <p className="text-white/5 text-8xl font-black tracking-tighter transition-all duration-500 group-hover:text-fuchsia-500/30 group-hover:translate-x-2">{exp.number}</p>
+                  <div className="absolute inset-0 flex flex-col justify-between p-6 md:p-10 z-10">
+                    <p className="text-white/5 text-7xl md:text-8xl font-black tracking-tighter transition-all duration-500 group-hover:text-fuchsia-500/30 group-hover:translate-x-2">{exp.number}</p>
                     <div>
-                        <p className="text-fuchsia-400 mb-3 uppercase tracking-[0.2em] text-xs font-bold transition-all duration-500 group-hover:tracking-[0.3em]">{exp.category}</p>
-                        <h3 className="text-4xl font-extrabold text-white mb-4 transition-transform duration-300 group-hover:-translate-y-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-rose-200 group-hover:to-indigo-200">
+                        <p className="text-fuchsia-400 mb-3 uppercase tracking-[0.2em] text-[10px] md:text-xs font-bold transition-all duration-500 group-hover:tracking-[0.3em]">{exp.category}</p>
+                        <h3 className="text-3xl md:text-4xl font-extrabold text-white mb-4 transition-transform duration-300 group-hover:-translate-y-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-rose-200 group-hover:to-indigo-200 text-balance">
                             {exp.title}
                         </h3>
-                        <p className="text-white/60 font-medium leading-relaxed max-w-md opacity-0 -translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 text-shadow-sm">
+                        <p className="text-white/60 text-sm md:text-base font-medium leading-relaxed max-w-md opacity-0 -translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 text-shadow-sm text-balance">
                             {exp.desc}
                         </p>
                     </div>
