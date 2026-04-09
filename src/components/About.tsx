@@ -15,7 +15,7 @@ export default function About() {
             className="flex-1"
         >
           <Typewriter text="About Me" delay={0.1} className="text-sm text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 uppercase tracking-[0.4em] font-bold mb-6 inline-block" />
-          <Typewriter text="Engineering Digital Excellence." delay={0.3} className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-white/40 leading-tight mb-8 tracking-tighter" />
+          <Typewriter text="Engineering Digital Excellence." delay={0.3} className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-white/40 leading-tight mb-8 tracking-tighter" />
           <p className="text-lg md:text-xl text-white/70 leading-relaxed font-light mb-8 mt-4 text-left md:text-justify text-balance">
             As a driven 1st Year Computer Science undergraduate, I am focused on building high-performance, intelligent digital systems. My technical journey sits at the intersection of complex problem-solving and sleek, modern design architectures—bridging the gap between robust software engineering and an intuitive user experience.
           </p>
