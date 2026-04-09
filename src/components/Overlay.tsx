@@ -1,28 +1,28 @@
 "use client";
 
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { motion, useTransform, useSpring, MotionValue } from "framer-motion";
 import { useEffect, useState } from "react";
 
-export default function Overlay() {
+interface OverlayProps {
+  progress: MotionValue<number>;
+}
+
+export default function Overlay({ progress }: OverlayProps) {
   const [isMounted, setIsMounted] = useState(false);
-  
-  // By not passing a target, it uses the window's global scroll progress.
-  // This is highly efficient since it syncs with ScrollyCanvas's overall height.
-  const { scrollYProgress } = useScroll();
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
   // Smooth out the scroll input for premium feel
-  const smoothScroll = useSpring(scrollYProgress, { 
+  // We use the passed-in progress from ScrollyCanvas to ensure 100% sync
+  const smoothScroll = useSpring(progress, { 
     stiffness: 50, 
     damping: 25,
     restDelta: 0.001
   });
 
-  // Section 1: Hi - SCALED FOR LCP
-  // We use [0, 0.05, 0.1] so it starts visible and hides early.
+  // Section 1: Hi
   const op1 = useTransform(smoothScroll, [0, 0.1, 0.15], [1, 1, 0]);
   const scale1 = useTransform(smoothScroll, [0, 0.15], [1, 1.05]);
 
@@ -46,7 +46,6 @@ export default function Overlay() {
     <div className="absolute inset-0 w-full h-full pointer-events-none z-10 flex flex-col justify-center px-6 md:px-24">
       
       {/* Section 1: Hi - STATIC FIRST APPROACH */}
-      {/* Before mount, we show a basic version that the browser doesn't need JS to render, fixing LCP */}
       <motion.div 
         style={{ opacity: isMounted ? op1 : 1, scale: isMounted ? scale1 : 1 }} 
         className={`${commonClass} left-6 md:left-24 origin-left`}
@@ -54,7 +53,7 @@ export default function Overlay() {
           <h1 className={textOutlineClass}>Hi.</h1>
       </motion.div>
 
-      {/* Following sections only animate after mount to keep the core thread lean initially */}
+      {/* Following sections animate after mount */}
       {isMounted && (
         <>
           {/* Section 2: Yasir Azam */}

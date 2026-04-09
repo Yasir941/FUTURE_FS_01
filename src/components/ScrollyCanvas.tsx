@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useScroll, useTransform } from "framer-motion";
+import Overlay from "./Overlay";
 
 const FRAME_COUNT = 75; // 00 to 74
 const getFramePath = (index: number) => {
@@ -9,7 +10,7 @@ const getFramePath = (index: number) => {
   return `/sequence/frame_${paddedIndex}_delay-0.066s.png`;
 };
 
-export default function ScrollyCanvas({ children }: { children?: React.ReactNode }) {
+export default function ScrollyCanvas() {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [images, setImages] = useState<(HTMLImageElement | undefined)[]>(new Array(FRAME_COUNT).fill(undefined));
@@ -151,7 +152,7 @@ export default function ScrollyCanvas({ children }: { children?: React.ReactNode
     <div ref={containerRef} className="relative h-[500vh] w-full bg-[#0a0a0a]">
       <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
         <canvas ref={canvasRef} className="absolute inset-0 h-full w-full object-cover z-0" />
-        {children}
+        <Overlay progress={scrollYProgress} />
         
 
       </div>
