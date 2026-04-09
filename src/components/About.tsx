@@ -6,6 +6,7 @@ const stats = [
   { value: "5+", label: "Projects Built", sub: "Full-Stack & AI" },
   { value: "100%", label: "Attendance", sub: "Record & Dedication" },
   { value: "2×", label: "Award Winner", sub: "Hackathon & Edu Café" },
+  { value: "100+", label: "Awards Won", sub: "Maths · Science · Cyber · Arts" },
 ];
 
 export default function About() {
