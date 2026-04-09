@@ -39,7 +39,7 @@ export default function Contact() {
     };
 
     return (
-        <section id="contact" className="relative z-20 w-full bg-black py-40 px-8 md:px-16 flex flex-col justify-center min-h-screen overflow-hidden">
+        <section id="contact" className="relative z-20 w-full bg-black py-40 px-8 md:px-16 flex flex-col justify-center min-h-screen overflow-hidden section-optimize">
             <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-center">
                 
                 {/* Left Side: Header & Info */}

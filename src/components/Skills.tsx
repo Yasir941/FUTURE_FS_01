@@ -20,7 +20,7 @@ export default function Skills() {
     const row2 = ["Leadership", "Coordination", "Communication", "GenAI & RAG", "Vercel", "Problem Solving"];
 
     return (
-        <section id="skills" className="relative z-20 w-full bg-[#0a0a0a] py-32 overflow-hidden">
+        <section id="skills" className="py-24 bg-[#0a0a0a] section-optimize">
             <div className="max-w-7xl mx-auto px-8 mb-20 text-center md:text-left">
                 <Typewriter text="Core Competencies" delay={0.1} className="text-sm text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 uppercase tracking-[0.4em] font-bold mb-4 inline-block" />
                 <br />

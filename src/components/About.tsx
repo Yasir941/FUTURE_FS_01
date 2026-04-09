@@ -4,7 +4,7 @@ import Typewriter from "@/components/Typewriter";
 
 export default function About() {
   return (
-    <section id="about" className="relative z-20 w-full bg-[#0a0a0a] py-40 px-8 md:px-24 overflow-hidden">
+    <section id="about" className="relative z-20 w-full bg-[#0a0a0a] py-40 px-8 md:px-24 overflow-hidden section-optimize">
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-20 items-center">
         
         <motion.div 

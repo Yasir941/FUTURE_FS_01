@@ -32,7 +32,7 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="relative z-20 w-full bg-[#0a0a0a] py-32 px-8 md:px-24 overflow-hidden">
+    <section id="projects" className="py-40 bg-[#0a0a0a] section-optimize">
       <div className="max-w-7xl mx-auto">
         
         <Typewriter 

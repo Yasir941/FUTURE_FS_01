@@ -65,3 +65,8 @@ html, body {
     -webkit-text-stroke: 2px rgba(255, 255, 255, 0.4);
   }
 }
+
+.section-optimize {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 1000px;
+}

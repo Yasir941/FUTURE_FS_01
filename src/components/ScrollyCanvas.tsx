@@ -71,6 +71,8 @@ export default function ScrollyCanvas({ children }: { children?: React.ReactNode
         });
     };
 
+    const yieldToMainThread = () => new Promise(resolve => setTimeout(resolve, 10));
+
     const loadAll = async () => {
         // Step 1: Load frame 0 immediately
         await loadImg(0);
@@ -84,6 +86,7 @@ export default function ScrollyCanvas({ children }: { children?: React.ReactNode
         for (let i = 0; i < remaining.length; i += 5) {
             const batch = remaining.slice(i, i + 5);
             await Promise.all(batch.map(idx => loadImg(idx)));
+            await yieldToMainThread(); // Yield to allow browser to handle interactions
         }
     };
 
